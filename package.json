@@ -1,0 +1,57 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "standard | snazzy",
+    "start": "node ./index.js",
+    "test": "export $(cat .env) && jest --detectOpenHandles --silent",
+    "test:watch": "export $(cat .env) && jest --coverage --detectOpenHandles --watch --silent",
+    "dev": "export $(cat .env) && node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/webhook": "^7.0.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.4",
+    "mongoose-delete": "^1.0.2",
+    "morgan-body": "^2.6.9",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.9.7",
+    "pino": "^9.0.0",
+    "pino-pretty": "^11.0.0",
+    "sequelize": "^6.37.3",
+    "supertest": "^7.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.6",
+    "@babel/preset-react": "^7.24.6",
+    "babel-jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "snazzy": "^9.0.0",
+    "standard": "^17.1.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "coverageReporter": ["html,json"]
+  }
+}
