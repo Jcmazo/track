@@ -9,7 +9,7 @@ export const connectDB = async () => {
     await mongoose.connect(DB_CONNECION)
     logger.info('Connected to Mongo database')
   } catch (err) {
-    mongoose.close()
+    mongoose.connection.close()
     logger.warn('Could not connect to Mongo database')
   }
 }
